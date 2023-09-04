@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calisma2</title>
+</head>
+<style>
+    div.container {
+   /* width: 100%;*/
+    border: 1px solid gray;
+    width: 80%; /* Adjust the width of the container as desired */
+    margin: 0 auto;
+    
+    
+}
+
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: rgb(182, 67, 182);
+    clear: left;
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    background-color: #373a39;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 14px 16px;
+
+    text-decoration: none;
+}
+div.search-box {
+    float: right;
+    margin-top: 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    
+    
+}
+
+input[type="text"] {
+    padding: 6px;
+    border: 3px solid #ffae00;
+    border-radius: 4px;
+    
+    
+}
+nav{
+    float: left;
+    max-width: 280px;
+    background-color: rgb(207, 207, 207);
+
+}
+.parent-info {
+    display: none;
+    margin-left: 20px;
+}
+
+.parent-info.show {
+    display: block;
+}
+.child-info {
+    display: none;
+    margin-left: 40px;
+}
+
+.child-info.show {
+    display: block;
+}
+.subchild-info{
+    display: none;
+    margin-left: 40px;
+
+}
+.subchild-info.show{
+    display: block;
+
+}
+.cerceve {
+      border: 2px solid #000;
+      padding: 20px;
+      margin: 20px;
+      margin-left: 25%;
+    
+    }
+    .icerik-kutusu {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        border: 4px solid #6ca7a6;
+        border-radius: 6px;  
+        height: 200px;     
+        
+    }
+    
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+  margin-top: 5px;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+
+.tabcontent {
+  color: rgb(0, 0, 0);
+  display: none;
+  
+  height: 100%;
+  
+}
+
+ 
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>My X-Blog</h1>
+            <p> Farklı bir X-Blog deneyimi için hazır  mısısnız?</p>
+
+
+        </header>
+        
+        
+        <ul>
+
+            <li><a class="aktif" href="#index">Ana sayfa</a></li>
+          
+            
+            <li><a href="#hakkımızda">Hakkımızda</a></li>
+          
+            <li><a href="#urunler">Ürünler</a></li>
+          
+            <li><a href="#iletisim">İletişim</a></li>
+            <div class="search-box " >
+                <input type="text" placeholder="Ara ki bulasın...">
+            </div>
+          
+          </ul>     
+          <nav>
+            <br>
+            <img src="C:\Users\bgmkm\OneDrive\Masaüstü\panda.png" style="width: 250px;height: 250px; border-radius: 20% ;" >
+            
+            <p>Yazar ne yazar , ne yazmaz bilemezsin.
+                takip etmek istersen sosyal medyadan
+                da takip edebilirsin.
+            </p>
+            <h1>Kategoriler</h1>
+            <div class="parent">
+                <input type="checkbox" id="showChild" />parent
+                <div class="parent-info" id="childList">
+                    <p>image 1</p>
+                    <p>image 2</p>
+                    <label for="showGrandChild">
+                        <input type="checkbox" id="showGrandChild" /> Child
+                    </label>
+                    <div class="child-info" id="grandChildList">
+                        <p>image 3</p>
+                        <p>image 4</p>
+                    
+                    <label for="showSubChild">
+                        <input type="checkbox" id="showSubChild" /> SubChild
+                    </label>
+                    
+                        <div class="subchild-info" id="showSubChildList">
+                            <p>image 5</p>
+                            <p>image 6</p>
+                            <p>image 7</p>
+                            <p>image 8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+           
+          </nav>
+          <section class="cerceve">
+            <ul>
+                <button class="tablink" onclick="openPage('Notlar1')">Notlar1</button>
+                <button class="tablink" onclick="openPage('Notlar2')" >Notlar2</button>
+                <button class="tablink" onclick="openPage('Notlar3')">Notlar3</button>
+                <button class="tablink" onclick="openPage('Notlar4')" id="defaultOpen">Notlar4</button>
+            </ul>
+            <div id="Notlar1" class="tabcontent">
+                <h3>Notlar1</h3>
+                <p>Notlar1 bu sayfada yer almaktadır</p>
+              </div>
+              
+              <div id="Notlar2" class="tabcontent">
+                <h3>Notlar2</h3>
+                <p>Notlar2 bu sayfada yer almaktadır</p> 
+              </div>
+              
+              <div id="Notlar3" class="tabcontent">
+                <h3>Notlar3</h3>
+                <p>Notlar3 bu sayfada yer almaktadır</p>
+              </div>
+              <div id="Notlar4" class="tabcontent">
+                <h1>Tatilden Notlar</h1>
+                <div class="icerik-kutusu">
+                        <h4>Image4</h4></div>
+                        <p>Tatilde akılda kalan anılardan bir demet</p>
+                        <p>Download Monalisa</p>
+                        <img src="C:\Users\bgmkm\OneDrive\Masaüstü\monalisa.jpeg" style="width: 90px;height: 110px;" >
+                       
+                    
+              </div>
+
+
+  </section>
+
+        <footer>
+            <b> Footer</b>
+        </footer>
+ 
+    </div>
+    <script>
+       const parentCheckbox = document.getElementById("showChild");
+        const childList = document.getElementById("childList");
+        const grandChildCheckbox = document.getElementById("showGrandChild");
+        const grandChildList = document.getElementById("grandChildList");
+        const showSubChildCheckbox = document.getElementById("showSubChild");
+        const showSubChildList = document.getElementById("showSubChildList");
+
+        parentCheckbox.addEventListener("change", function() {
+            childList.classList.toggle("show", parentCheckbox.checked);
+        });
+
+        grandChildCheckbox.addEventListener("change", function() {
+            grandChildList.classList.toggle("show", grandChildCheckbox.checked);
+        });
+        showSubChildCheckbox.addEventListener("change", function() {
+            showSubChildList.classList.toggle("show", grandChildCheckbox.checked);
+        });
+
+        function openPage(pageName,elmnt,color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(pageName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+        }
+
+       
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>
